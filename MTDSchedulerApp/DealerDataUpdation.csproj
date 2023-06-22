@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00CC0A97-13E7-4F1D-A1FE-9C03DBB14766}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MTDSchedulerApp</RootNamespace>
+    <AssemblyName>MTDSchedulerApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\netstandard2.0\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BergerGlobalChatbotLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerLookingForPaint.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerPaintType.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerPhase3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BergerPhase3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerPhase3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerPhase3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BergerPhase3.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BergerStepWiseData.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BergerXPPaymentTransaction.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatbotLeadsOtherSource.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMCampaignLocation.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMFacebookECFLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMFacebookLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMFacebookSBELead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMGoogleLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMInstagramLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMLeadReportInputModel.cs" />
+    <Compile Include="CRMLeadReportOutputModel.cs" />
+    <Compile Include="CRMLeadSource.cs" />
+    <Compile Include="CRMLeadSubStatu.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMLeadSyncStatu.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMLinkedinLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRMSource.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="crmVendorLead.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExteriorWaterproofingFor.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookFormDetail.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InteriorWaterproofingFor.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogException.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbl_AskConsultant.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BusinessDealer.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BusinessDealerAdditionalData.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BusinessQuery.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ConstructionChemicalEnquiry.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Dealer.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HomePaintingEnquiry.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_IndustrialUsers_Enquiry.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductEnquiry.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_SocialPainting.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UnderCoatEnquiry.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VideoCategory.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyCertificateFor.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyCertificateOtherDetail.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyCertificateProduct.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyCertificateProductDetail.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyCertificateUser.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyHomeshieldApplication.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyHomeshieldOtherDetail.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyHomeshieldProductApplication.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyHomeshieldUploadDocument.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyHomeshieldUser.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyPincode.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyState.cs">
+      <DependentUpon>BergerPhase3.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="BergerPhase3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BergerPhase3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BergerPhase3.edmx.diagram">
+      <DependentUpon>BergerPhase3.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApiLog\1020797.txt" />
+    <Content Include="BergerPhase3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BergerPhase3.edmx</DependentUpon>
+      <LastGenOutput>BergerPhase3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BergerPhase3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BergerPhase3.edmx</DependentUpon>
+      <LastGenOutput>BergerPhase3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\EmailTemplate.html" />
+    <Content Include="Template\EmailTemplateForNoRecord.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExceptionLog\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
